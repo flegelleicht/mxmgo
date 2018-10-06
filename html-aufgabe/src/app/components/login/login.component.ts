@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     
     let mail = this.loginMailRef.nativeElement.value;
     let pass = this.loginPassRef.nativeElement.value;
-    console.info(`Logging in with ${mail}:${pass}`);
+
     let cred = new LoginCredentials(mail, pass);
     this.loginService.login(cred)
       .subscribe((resp) => {
