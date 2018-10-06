@@ -1,3 +1,33 @@
-<p>
-  login works!
-</p>
+<div id="container">
+  <div>
+    <img src="images/image.png">
+  </div>
+  <div>
+    <form 
+      id="login-form" 
+      action="login" 
+      method="post" 
+      accept-charset="utf-8"
+      (submit)="login($event)"
+      >
+      <p>
+        <label>E-Mail
+          <input #loginMail 
+            id="login-mail" 
+            type="text" 
+            placeholder="E-Mail">
+        </label>
+      </p>
+      <p>
+        <label>Passwort
+          <input #loginPass 
+            id="login-pass" 
+            type="password" 
+            placeholder="Passwort">
+        </label>
+      </p>
+      <p>
+        <input type="submit" value="Login">
+      </p>
+    </form>
+</div>
