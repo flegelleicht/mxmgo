@@ -1,0 +1,8 @@
+<div *ngIf="user" id="container">
+  <img src={{user.imagePath}}>
+  <p>{{user.fullName}}</p>
+  <p>{{user.mail}}</p>
+  <p>{{user.shoutout}}</p>
+  
+  <button (click)="logout()">Logout</button>
+</div>
