@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
+
+import { UserService } from '../services/user.service';
 import { LoginResponse } from '../types/login-response';
 import { LoginCredentials } from '../types/login-credentials';
 
@@ -8,18 +11,24 @@ import { LoginCredentials } from '../types/login-credentials';
   providedIn: 'root'
 })
 export class LoginService {
-  accounts = [{ user: 'test@example.com', pass: 'test' }];
-  
-  constructor() {}
+  constructor(private userService: UserService) {}
   
   login(credentials: LoginCredentials): Observable<LoginResponse> {
+
     let response = new LoginResponse(false, '');
 
-    let user = this.accounts.find(u => u.user === credentials.user);
-    if (user && credentials.pass === user.pass) {
-      response = new LoginResponse(true, `Math.random().toString(36).substr(2)`);
-    }
-    
-    return of(response);
+    return this.userService.findWithCredentials(credentials)
+      .pipe(map(user => {
+          if (user && credentials.pass === user.pass) {
+            this.userService.setCurrentUser(user);
+            response = new LoginResponse(true, `Math.random().toString(36).substr(2)`);
+          }        
+          return response;
+        }
+      ));
+  }
+  
+  logout() {
+    this.userService.setCurrentUser(null);
   }
 }
