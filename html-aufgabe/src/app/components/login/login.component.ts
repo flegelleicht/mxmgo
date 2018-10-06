@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MessageService } from '../../services/message.service';
 import { LoginService } from '../../services/login.service';
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   
   constructor(
     private loginService: LoginService,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private router: Router) { }
 
   ngOnInit() {  }
 
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(cred)
       .subscribe((resp) => {
         if (resp.allowed) {
-        
+          this.router.navigateByUrl('/home');
         } else {
           this.messageService.add(`Login ungültig`);
         }
