@@ -1,0 +1,32 @@
+<div id="container">
+  <div>
+    <img src="assets/images/image.png">
+  </div>
+  <div>
+    <form 
+      id="login-form" 
+      action="login" 
+      method="post" 
+      accept-charset="utf-8"
+      (submit)="login($event)">
+      <p>
+        <label>E-Mail
+          <input #loginMail 
+            id="login-mail" 
+            type="email" 
+            placeholder="E-Mail">
+        </label>
+      </p>
+      <p>
+        <label>Passwort
+          <input #loginPass 
+            id="login-pass" 
+            type="password" 
+            placeholder="Passwort">
+        </label>
+      </p>
+      <p>
+        <input type="submit" value="Login">
+      </p>
+    </form>
+</div>
