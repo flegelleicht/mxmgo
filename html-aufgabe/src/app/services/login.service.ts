@@ -8,7 +8,7 @@ import { LoginCredentials } from '../types/login-credentials';
   providedIn: 'root'
 })
 export class LoginService {
-  accounts = [{ user: 'test', pass: 'test' }];
+  accounts = [{ user: 'test@example.com', pass: 'test' }];
   
   constructor() {}
   
