@@ -1,6 +1,6 @@
 <div id="container">
   <div>
-    <img src="images/image.png">
+    <img src="assets/images/image.png">
   </div>
   <div>
     <form 
@@ -8,13 +8,12 @@
       action="login" 
       method="post" 
       accept-charset="utf-8"
-      (submit)="login($event)"
-      >
+      (submit)="login($event)">
       <p>
         <label>E-Mail
           <input #loginMail 
             id="login-mail" 
-            type="text" 
+            type="email" 
             placeholder="E-Mail">
         </label>
       </p>
