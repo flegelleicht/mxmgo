@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Injectable } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MessageService } from '../../services/message.service';
@@ -21,7 +21,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {  }
 
-  login(event) {
+  /**
+  * Tries to log in a user.
+  *
+  * Uses ElementRefs to get values from input fields on call.
+  * 
+  * @param {Event} event - The native DOM Event
+  * @returns {void} - Either navigates to '/home' on success or logs a message
+  **/
+  login(event): void {
     event.preventDefault();
     
     let mail = this.loginMailRef.nativeElement.value;
@@ -33,7 +41,7 @@ export class LoginComponent implements OnInit {
         if (resp.allowed) {
           this.router.navigateByUrl('/home');
         } else {
-          this.messageService.add(`Login ungültig`);
+          this.messageService.add(`⚠ Login ungültig`);
         }
       });
   }

@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
     private loginService: LoginService,
     private router: Router) { }
 
+  /**
+   * Redirects to '/login' if there's no logged-in user
+   **/ 
   ngOnInit() {
     this.user = this.userService.getCurrentUser();
     if (!this.user) {
