@@ -1,8 +1,11 @@
-input {
-	font-size: 110%;
-	border: 2px solid black;
-	margin-bottom: 1em;
-	padding: 0.2em;
+#login-btn {
+	box-shadow: 2px 2px 0 var(--btn-shadow-color);	
+}
+#login-btn:active {
+	position: relative;
+	top: 2px;
+	left: 2px;
+	box-shadow: none;
 }
 @media screen and (min-width: 600px), screen and (orientation: landscape) {
 	#container {
@@ -29,6 +32,7 @@ input {
 	#login-btn {
 		box-sizing: border-box;
 		margin-left: 40%;
+		margin-top: 1.5em;
 	}
 	.column {
 		display: inline-block;

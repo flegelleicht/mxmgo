@@ -5,4 +5,15 @@ html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
       "Droid Sans", "Helvetica Neue", sans-serif;
+	--btn-shadow-color: #444;
+}
+input, button {
+	font-size: 110%;
+	border: 2px solid var(--btn-shadow-color);
+	margin-bottom: 1em;
+	padding: 0.2em;
+	background-color: white;
+}
+input:active, button:active {
+	box-shadow: 1px 1px 10px var(--btn-shadow-color);
 }
