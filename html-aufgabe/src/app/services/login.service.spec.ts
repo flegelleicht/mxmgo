@@ -13,7 +13,7 @@ describe('LoginService', () => {
   
   it('should allow valid credentials', () => {
     const service: LoginService = TestBed.get(LoginService);
-    let credentials = new LoginCredentials('test', 'test');
+    let credentials = new LoginCredentials('testuser@t.de', 'test');
     service.login(credentials)
       .subscribe((response) => {
         expect(response.allowed).toBe(true)
