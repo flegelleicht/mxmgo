@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         if (resp.allowed) {
           this.router.navigateByUrl('/home');
         } else {
-          this.messageService.add(`Login ungültig`);
+          this.messageService.add(`⚠ Login ungültig`);
         }
       });
   }
