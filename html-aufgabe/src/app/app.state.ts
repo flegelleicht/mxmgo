@@ -1,15 +1,19 @@
 import { Action } from '@ngrx/store';
-
 import { User } from './types/user-info';
 
+export const LOGIN = 'LOGIN';
+
+export class AppState {
+  currentUser: User;
+}
 const initialState = {
   currentUser: null
-};
+}
 
-export function appReducer(state: any = initialState, action: Action) {
+export function appReducer(state: AppState = initialState, action: Action) {
   switch (action.type) {
-    case 'LOGIN':
-    return {...state, currentUser: new User("Karl Toffel", "k@t", "123", "", "Hallo Welt!")};
+    case LOGIN:
+      return { currentUser: new User('a','b','c','d','e') };
     default:
     return state;
   }

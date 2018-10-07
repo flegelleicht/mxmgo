@@ -7,6 +7,11 @@
     <p>{{user.mail}}</p>
     <p>{{user.shoutout}}</p>
   </div>
+
+  <div id="current-user-info">
+    <p *ngIf="(cu$ | async) as user">{{ user.fullName }}</p>
+    <button (click)="login()">login</button>
+  </div>
   
   <button id="logout-btn" (click)="logout()">Logout</button>
 </div>
