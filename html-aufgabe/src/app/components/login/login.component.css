@@ -1,0 +1,36 @@
+#container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+div.panel {
+	width: 40%;
+	padding: 10% 0;
+}
+#login-image {
+	width:100%;
+}
+
+#login-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-left: 10%;
+}
+#login-btn {
+	box-sizing: border-box;
+	margin-left: 40%;
+}
+.column {
+	display: inline-block;
+	width: 40%;
+}
+#app-messages {
+	display: inline-block;
+	width:40%;
+	margin-left:40%;
+	text-align: center;
+	color: red;
+}

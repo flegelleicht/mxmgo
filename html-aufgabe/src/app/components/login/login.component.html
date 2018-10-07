@@ -1,8 +1,8 @@
 <div id="container">
-  <div>
-    <img src="assets/images/image.png">
+  <div class="panel">
+    <img id="login-image" src="assets/images/image.png">
   </div>
-  <div>
+  <div class="panel">
     <form 
       id="login-form" 
       action="login" 
@@ -10,24 +10,26 @@
       accept-charset="utf-8"
       (submit)="login($event)">
       <p>
-        <label>E-Mail
-          <input #loginMail 
-            id="login-mail" 
-            type="email" 
-            placeholder="E-Mail">
-        </label>
+        <label for="login-mail" class="column" >E-Mail</label>
+        <input #loginMail 
+          id="login-mail" 
+          class="column"
+          type="email" 
+          placeholder="E-Mail">
       </p>
       <p>
-        <label>Passwort
-          <input #loginPass 
-            id="login-pass" 
-            type="password" 
-            placeholder="Passwort">
-        </label>
+        <label for="login-pass" class="column">Passwort</label>
+        <input #loginPass 
+          id="login-pass" 
+          class="column"
+          type="password" 
+          placeholder="Passwort">
       </p>
       <p>
-        <input type="submit" value="Login">
+        <input id="login-btn" class="column" type="submit" value="Login">
+      </p>
+      <p>
+        <app-messages id="app-messages" class="column"></app-messages>
       </p>
     </form>
-    <app-messages></app-messages>
 </div>
