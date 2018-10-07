@@ -1,8 +1,12 @@
 <div *ngIf="user" id="container">
-  <img src={{user.imagePath}}>
-  <p>{{user.fullName}}</p>
-  <p>{{user.mail}}</p>
-  <p>{{user.shoutout}}</p>
+  <div id="user-image">
+    <img src={{user.imagePath}}>
+  </div>
+  <div id="user-info">
+    <p>{{user.fullName}}</p>
+    <p>{{user.mail}}</p>
+    <p>{{user.shoutout}}</p>
+  </div>
   
-  <button (click)="logout()">Logout</button>
+  <button id="logout-btn" (click)="logout()">Logout</button>
 </div>

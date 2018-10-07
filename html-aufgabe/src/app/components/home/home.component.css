@@ -1,0 +1,38 @@
+#container {
+	width: 100vw;
+	height: 100vh;
+	padding: 20% 10%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+#user-image img {
+	--img-width: 120px;
+	width: var(--img-width);
+	max-width: var(--img-width);
+}
+
+#user-info {
+	margin-left: 1em;
+}
+
+#user-info p {
+	line-height: 1.7em;
+}
+
+#logout-btn {
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+	width: 150px;
+	box-shadow: 2px 2px 0 var(--btn-shadow-color);
+}
+
+#logout-btn:active {
+	position: absolute;
+	right: calc(5% - 2px);
+	bottom: calc(5% - 2px);
+	box-shadow: none;
+}
